@@ -1,75 +1,91 @@
 Common Adaptive Widgets
 
-Below are some of the code snippet for the commonly used widget in flutter. This makes apps feel more home like for the users.
+Check out these simple code examples that use common Flutter widgets. They make mobile apps easy to use and feel familiar.
 
 ```dart
+// A switch that adapts its appearance based on the platform
 Switch.adaptive(
-              value: false,
-              onChanged: (value) {
-              },
-            ),
+  value: false,
+  onChanged: (value) {
+    // Handle switch value change
+  },
+),
 
- SwitchListTile.adaptive(
-                title: const Text('Text'),
-                value: true,
-                onChanged: (newValue) {
-                }),
+// An adaptive switch embedded within a list tile
+SwitchListTile.adaptive(
+  title: const Text('Text'),
+  value: true,
+  onChanged: (newValue) {
+    // Handle switch value change
+  },
+),
 
-    SwitchListTile.adaptive(
-                title: const Text('Text'),
-                value: isSwitched2,
-                onChanged: (newValue) {
-                  setState(() {
-                    isSwitched2 = newValue;
-                  });
-                }),
-                
-            Slider.adaptive(
-              value: .1,
-              min: 0.0,
-              max: 10.0,
-              divisions: 10,
-              label: .1.toString(),
-              onChanged: (value) {
-              },
-            ),
+// Another adaptive switch within a list tile with dynamic state management
+SwitchListTile.adaptive(
+  title: const Text('Text'),
+  value: isSwitched2,
+  onChanged: (newValue) {
+    setState(() {
+      isSwitched2 = newValue;
+    });
+  },
+),
 
-             const CircularProgressIndicator.adaptive(),
-            
-            const AdfaptiveElevatedButton(
-              title: 'Say Adaptive',
-            ),
+// An adaptive slider with dynamic range and label
+Slider.adaptive(
+  value: .1,
+  min: 0.0,
+  max: 10.0,
+  divisions: 10,
+  label: .1.toString(),
+  onChanged: (value) {
+    // Handle slider value change
+  },
+),
 
+// An adaptive circular progress indicator
+const CircularProgressIndicator.adaptive(),
 
-
+// An adaptive elevated button demonstrating platform-specific styling
+const AdaptiveElevatedButton(
+  title: 'Say Adaptive',
+),
 ```
 
 ```dart
-class AdfaptiveElevatedButton extends StatelessWidget {
+class AdaptiveElevatedButton extends StatelessWidget {
+// Custom adaptive elevated button class
+class AdaptiveElevatedButton extends StatelessWidget {
   final String title;
-  const AdfaptiveElevatedButton({
+  const AdaptiveElevatedButton({
     Key? key,
     required this.title,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Check the current platform to determine the button appearance
     bool isIOS = Theme.of(context).platform == TargetPlatform.iOS;
     return SizedBox(
       child: isIOS
           ? CupertinoButton.filled(
               child: Text(title),
-              onPressed: () {},
+              onPressed: () {
+                // Handle button press
+              },
             )
           : ElevatedButton(
               child: Text(title),
-              onPressed: () {},
+              onPressed: () {
+                // Handle button press
+              },
             ),
     );
   }
 }
 ```
-The code snippet provided demonstrates how to create an adaptive dialog in Flutter for Android and iOS using the `showAdaptiveDialog` method and the `AdaptiveDialogWidget` class.
+
+Adaptive widgets, like `Switch`, `SwitchListTile`, `Slider`, `CircularProgressIndicator`, and `AdaptiveElevatedButton`, enhance the user experience by adapting to different platforms in Flutter. The `AdaptiveElevatedButton` even demonstrates a custom adaptive button based on the current platform.
 
 
-[source](https://api.flutter.dev/flutter/material/AlertDialog/AlertDialog.adaptive.html)
+For more details and examples and explanation, refer to the [Flutter documentation](https://docs.flutter.dev/ui/layout/responsive/building-adaptive-apps). 
