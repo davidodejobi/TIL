@@ -1,4 +1,4 @@
-Create an Adaptive Dialog
+## Create an Adaptive Dialog
 
 Creating an adaptive app in Flutter involves writing platform-specific code for each platform. However, the Flutter team has introduced widgets to simplify the process. One such widget is the `showAdaptiveDialog` method.
 

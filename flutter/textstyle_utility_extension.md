@@ -1,4 +1,4 @@
-##TextStyle Utility Extension
+## TextStyle Utility Extension
 
 If you've read some Flutter tips online, you might have noticed this one come up too often: Don't hardcode text styles. I agree with that because it makes the app more manageable and easy to change the font size in the app theme, updating it app-wide.
 

@@ -1,4 +1,4 @@
-Common Adaptive Widgets
+## Common Adaptive Widgets
 
 Check out these simple code examples that use common Flutter widgets. They make mobile apps easy to use and feel familiar.
 
